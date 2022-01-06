@@ -1,2 +1,2 @@
 Live Reload:
-nodemon --exec go run main.go --signal SIGTERM
+export PATH=$PATH:$(go env GOPATH)/bin
