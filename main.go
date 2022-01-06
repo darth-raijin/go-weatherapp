@@ -28,7 +28,9 @@ func root(w http.ResponseWriter, r *http.Request) {
 }
 
 func view_city(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "viewing specific city")
+	tmpl := template.Must(template.ParseFiles("templates/city.html"))
+	log.Println("yessir")
+	tmpl.Execute(w, "s")
 }
 
 func main() {
@@ -37,6 +39,7 @@ func main() {
 	mux.Handle("/css/", twhandler.New(http.Dir("css"), "/css", twembed.New()))
 
 	mux.HandleFunc("/test", test_fragment)
+	mux.HandleFunc("/city", view_city)
 
 	http.ListenAndServe(":8080", mux)
 	fmt.Println("viewing specific city")
