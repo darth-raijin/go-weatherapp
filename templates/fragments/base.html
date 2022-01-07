@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>{{.title}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- You can include common scripts and stylesheets in the base template -->
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <h1 class="has-text-weight-bold is-primary">WEATHEROO</h1>
+          </a>
+      
+          <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        
+        <div id="navbarBasicExample" class="navbar-menu">
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <a class="navbar-item" href="/city">
+                <p class="button {{.city}}">City</p>
+              </a>
+        
+              <a class="navbar-item" href="/country">
+                <p class="button {{.country}}">Country</p>
+              </a>
+  
+              <a class="navbar-item" href="/surprise">
+                <p class="button {{.surprise}}">Surprise</p>
+              </a>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+{{block "BODY" .}}
+
+{{end}}
+
+</body>
+<script>
+  $(document).ready(function() {
+
+// Check for click events on the navbar burger icon
+$(".navbar-burger").click(function() {
+
+    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+    $(".navbar-burger").toggleClass("is-active");
+    $(".navbar-menu").toggleClass("is-active");
+
+});
+});
+</script>
+</html>
