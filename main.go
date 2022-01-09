@@ -37,12 +37,20 @@ func view_city(w http.ResponseWriter, r *http.Request) {
 		"myvar": "Variable example",
 		"city":  "is-primary",
 	}
+	if r.URL.Query() != nil {
+		var city_param = r.URL.Query().Get("city")
+		data["title"] = city_param + " - " + "Weatheroo"
 
+	}
 	base := template.Must(template.ParseFiles("templates/fragments/base.html"))
 	city := template.Must(base.ParseFiles("templates/city.html"))
 
 	log.Println("City GET request")
 	city.Execute(w, data)
+}
+
+func get_city(city string) {
+	// Contact extern API for weatherdata
 }
 
 func view_country(w http.ResponseWriter, r *http.Request) {

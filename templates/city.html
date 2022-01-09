@@ -1,7 +1,16 @@
 {{define "BODY"}}
 
-<h1>Your Projects</h1>
-<p>Normal template goes here</p>
-<p>{{.myvar}}<p>
+<section class="section">
+    <h1 class="title">City</h1>
+    <h2 class="subtitle">
+      Look up a city to get weather data!
+    </h2>
+  </section>
 
+  <div class="container">
+      <form action="" method="get">
+          <input class="input is-info" name="city" type="text" placeholder="Search for a city">
+    </form>
+
+  </div>
 {{end}}
