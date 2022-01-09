@@ -2329,6 +2329,22 @@ div.icon-text {
 .progress.is-dark::-moz-progress-bar {
   background-color: #363636;
 }
+.pac-container {
+  background-color: #363636;
+  color: #000;
+}
+.pac-item-query, .pac-item {
+  color: white;
+}
+
+.pac-container {
+  background-color: none;
+  outline: blue;
+}
+
+.hidden {
+  display: none;
+}
 .progress.is-dark::-ms-fill {
   background-color: #363636;
 }

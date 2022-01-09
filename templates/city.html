@@ -1,16 +1,25 @@
 {{define "BODY"}}
 
-<section class="section">
-    <h1 class="title">City</h1>
-    <h2 class="subtitle">
-      Look up a city to get weather data!
-    </h2>
-  </section>
-
-  <div class="container">
-      <form action="" method="get">
-          <input class="input is-info" name="city" type="text" placeholder="Search for a city">
+  <head>
+    <title>Places Search Box</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./map.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div class="container">
+      <form action="" method="get" autocomplete="off">
+          <input autocomplete="false" name="hidden"  class="hidden">
+          <input class="input is-info" id="pac-input" name="city" type="text" placeholder="Search for a city" autocomplete="off">
     </form>
 
-  </div>
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD4nwZBxbImiDkbq7eBLobQrA7JhkUx4Y&callback=initAutocomplete&libraries=places&v=weekly"
+      async
+    ></script>
+  </body>
+</html>
+
 {{end}}

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	// FIX THIS "github.com/macow-lab/go-weatherapp/structs/city"
 	"html/template"
 	"log"
 	"net/http"
@@ -87,11 +88,11 @@ func main() {
 	mux.Handle("/css/", twhandler.New(http.Dir("css"), "/css", twembed.New()))
 
 	mux.HandleFunc("/test", test_fragment)
-	mux.HandleFunc("/city", view_city)
-	mux.HandleFunc("/country", view_country)
-	mux.HandleFunc("/surprise", view_surprise)
+	mux.HandleFunc("/city", logging(view_city))
+	mux.HandleFunc("/country", logging(view_country))
+	mux.HandleFunc("/surprise", logging(view_surprise))
 
 	http.ListenAndServe(":8080", mux)
-	fmt.Println("viewing specific city")
+	fmt.Println("Server running!")
 
 }

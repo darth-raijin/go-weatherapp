@@ -1,0 +1,7 @@
+.pac-container {
+    background-color: #363636;
+    color: #000;
+  }
+  .pac-item-query, .pac-item {
+    color: white;
+  }
